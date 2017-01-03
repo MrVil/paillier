@@ -12,5 +12,11 @@ public class Main {
         BigInteger cyphertext = alice.Encryption(message, bob.getPk());
         System.out.println("Alice encrypt : "+message);
         System.out.println("Bob decrypt   : "+bob.Decryption(cyphertext));
+
+        BigInteger m1 = new BigInteger("5"), m2 = new BigInteger("10");
+        BigInteger c1 = alice.Encryption(m1, bob.getPk()), c2 = alice.Encryption(m2, bob.getPk());
+        BigInteger c3 = c1.multiply(c2);
+        System.out.println("Alice encrypt : "+m1+" & "+m2);
+        System.out.println("Bob decrypt   : "+bob.Decryption(c3));
     }
 }
