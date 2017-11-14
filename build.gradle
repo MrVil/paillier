@@ -10,6 +10,10 @@ buildscript {
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
+    sourceSets {
+        main.kotlin.srcDirs += 'src/main/kotlin'
+        main.java.srcDirs += 'src/main/java'
+    }
 }
 
 apply plugin: 'java'
